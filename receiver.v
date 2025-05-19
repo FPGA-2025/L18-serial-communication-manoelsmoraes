@@ -39,7 +39,7 @@ module receiver (
                     // Após o 8º bit recebido (bit de paridade)
                     receiving <= 0;
                     data_out <= shift_reg[6:0];
-                    parity_ok_n <= ^{shift_reg[6:0], serial_in}; // paridade dos dados + último bit
+                    parity_ok_n <= ^{shift_reg[7:0]}; // paridade dos dados + último bit
                     ready <= 1;
                 end
             end

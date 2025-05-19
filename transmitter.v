@@ -10,7 +10,7 @@ module transmitter (
     reg [7:0] shift_reg;
     reg sending;
 
-    wire parity_bit = ~(^data_in); // paridade par
+    wire parity_bit = (^data_in); // paridade par
 
     always @(posedge clk or negedge rstn) begin
         if (!rstn) begin
